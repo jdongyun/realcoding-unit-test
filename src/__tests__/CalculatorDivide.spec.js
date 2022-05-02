@@ -5,4 +5,9 @@ describe("사칙연산 나눗셈 테스트.", () => {
     const calculator = new Calculator();
     expect(calculator.divide(4, 2)).toEqual(2);
   });
+
+  test("0으로 나누면 에러가 발생한다.", () => {
+    const calculator = new Calculator();
+    expect(calculator.divide(4, 0)).toEqual(Infinity);
+  });
 });
