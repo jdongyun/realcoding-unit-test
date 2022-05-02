@@ -1,3 +1,10 @@
+export class DivideZeroError extends Error {
+  constructor() {
+    super('Cannot divide by zero.');
+    this.name = 'DivideZeroError';
+  }
+}
+
 class Calculator {
   plus = (a, b) => {
     return a + b;
@@ -14,7 +21,7 @@ class Calculator {
   customCalculation = (callback, ...args) => {
     callback(...args);
   };
-  
+
   minus = (a, b) => {
     return a - b;
   };
@@ -24,6 +31,9 @@ class Calculator {
   };
 
   divide = (a, b) => {
+    if (b === 0) {
+      throw new DivideZeroError();
+    }
     return a / b;
   }
 }
