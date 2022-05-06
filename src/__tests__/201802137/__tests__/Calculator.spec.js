@@ -6,6 +6,14 @@ beforeEach(() => {
   console.log("각 테스트를 시작하기 전 실행된다.");
 });
 
+afterAll(() => {
+  console.log("모든 테스트가 완료된 후 한번만 실행된다.")
+});
+
+afterEach(() => {
+  console.log("각 테스트가 완료된 후 실행된다.")
+})
+
 describe("음수 양수 판단", () => {
   const isNegative = (x) => x < 0;
   test("isNegative에 7을 넣으면 false를 반환한다.", () => {
